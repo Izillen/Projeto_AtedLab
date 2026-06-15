@@ -29,5 +29,5 @@ if($controller === 'usuarios'){
     }
 }else{
     echo '<h1>AtendLab</h1>';
-    echo '<p>Projeto em execução. Use ?controller=usuario$action=listar para testar.</p>'
+    echo '<p>Projeto em execução. Use ?controller=usuario$action=listar para testar.</p>';
 }
