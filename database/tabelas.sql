@@ -6,7 +6,7 @@ CREATE TABLE pessoas (
     cpf VARCHAR(14) UNIQUE,
     telefone VARCHAR(20),
     email VARCHAR(100),
-    data_nascimento DATE,
+    endereco VARCHAR(255),
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -23,7 +23,8 @@ CREATE TABLE atendimentos (
     usuario_id INT NOT NULL,
     tipo_atendimento_id INT NOT NULL,
     data_atendimento DATETIME DEFAULT CURRENT_TIMESTAMP,
-    observacao TEXT
+    observacao TEXT,
+    status ENUM('aberto', 'em_andamento', 'finalizado', 'cancelado') DEFAULT 'aberto'
 
     CONSTRAINT fk_atendimento_pessoa
         FOREIGN KEY (pessoa_id)
