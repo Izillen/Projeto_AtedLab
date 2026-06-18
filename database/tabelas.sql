@@ -24,7 +24,7 @@ CREATE TABLE atendimentos (
     tipo_atendimento_id INT NOT NULL,
     data_atendimento DATETIME DEFAULT CURRENT_TIMESTAMP,
     observacao TEXT,
-    status ENUM('aberto', 'em_andamento', 'finalizado', 'cancelado') DEFAULT 'aberto'
+    status ENUM('aberto', 'em_andamento', 'finalizado', 'cancelado') DEFAULT 'aberto',
 
     CONSTRAINT fk_atendimento_pessoa
         FOREIGN KEY (pessoa_id)
