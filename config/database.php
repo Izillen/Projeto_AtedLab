@@ -2,7 +2,7 @@
 
 $host = 'localhost';
 $dbname = 'atendelab';
-$porta = '3307';
+$porta = '3306';
 $user = 'root';
 $password = '';
 

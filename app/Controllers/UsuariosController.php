@@ -1,6 +1,6 @@
 <?php
 
-class UsuarioController
+class UsuariosController
 {
     private PDO $pdo;
 
