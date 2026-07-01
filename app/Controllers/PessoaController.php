@@ -82,8 +82,14 @@ class PessoaController
                      :periodo, :status, :observacoes)'
             );
             $stmt->execute(compact(
-                'nome', 'documento', 'telefone', 'email', 'curso',
-                'periodo', 'status', 'observacoes'
+                'nome',
+                'documento',
+                'telefone',
+                'email',
+                'curso',
+                'periodo',
+                'status',
+                'observacoes'
             ));
             $this->json(['mensagem' => 'Pessoa cadastrada com sucesso.'], 201);
         } catch (PDOException $e) {
@@ -124,8 +130,15 @@ class PessoaController
                     observacoes = :observacoes WHERE id = :id'
             );
             $stmt->execute(compact(
-                'id', 'nome', 'documento', 'telefone', 'email', 'curso',
-                'periodo', 'status', 'observacoes'
+                'id',
+                'nome',
+                'documento',
+                'telefone',
+                'email',
+                'curso',
+                'periodo',
+                'status',
+                'observacoes'
             ));
             $this->json(['mensagem' => 'Pessoa atualizada com sucesso.']);
         } catch (PDOException $e) {

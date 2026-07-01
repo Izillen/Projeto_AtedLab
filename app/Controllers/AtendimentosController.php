@@ -81,8 +81,10 @@ class AtendimentosController
         $horario = $_POST['horario_atendimento'] ?? '';
         $status = $_POST['status'] ?? 'aberto';
 
-        if (!$pessoaId || !$tipoId || !$usuarioId ||
-            $descricao === '' || $data === '' || $horario === '') {
+        if (
+            !$pessoaId || !$tipoId || !$usuarioId ||
+            $descricao === '' || $data === '' || $horario === ''
+        ) {
             $this->json(['erro' => 'Preencha os campos obrigatórios.'], 422);
             return;
         }
@@ -117,11 +119,13 @@ class AtendimentosController
         $status = $_POST['status'] ?? '';
         $observacao = trim($_POST['observacao_final'] ?? '');
 
-        if (!$id || !in_array(
-            $status,
-            ['aberto', 'em_andamento', 'concluido'],
-            true
-        )) {
+        if (
+            !$id || !in_array(
+                $status,
+                ['aberto', 'em_andamento', 'concluido'],
+                true
+            )
+        ) {
             $this->json(['erro' => 'ID ou status inválido.'], 422);
             return;
         }

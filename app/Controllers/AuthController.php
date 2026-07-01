@@ -73,7 +73,7 @@ class AuthController
             FROM usuarios
             WHERE email = :email
             LIMIT 1
-        ";        
+        ";
 
         // Prepara a consulta para evitar SQL Injection.
         $stmt = $this->pdo->prepare($sql);
@@ -86,7 +86,7 @@ class AuthController
 
         // Recupera o usuário encontrado.
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
         // Valida usuário existente, status ativo e senha correta.
         if (
             !$usuario
@@ -104,9 +104,9 @@ class AuthController
 
         // Salva na sessão apenas os dados necessários do usuário.
         $_SESSION['usuario'] = [
-            'id'     => $usuario['id'],
-            'nome'   => $usuario['nome'],
-            'email'  => $usuario['email'],
+            'id' => $usuario['id'],
+            'nome' => $usuario['nome'],
+            'email' => $usuario['email'],
             'perfil' => $usuario['perfil'],
         ];
 

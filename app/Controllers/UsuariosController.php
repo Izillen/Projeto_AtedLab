@@ -6,7 +6,7 @@ class UsuariosController
 
     public function __construct()
     {
-        require __DIR__ .'/../../config/database.php';
+        require __DIR__ . '/../../config/database.php';
         $this->pdo = $pdo;
     }
 
@@ -17,9 +17,9 @@ class UsuariosController
         $sql = 'SELECT id, nome, email, perfil, status, criado_em
                 FROM usuarios
                 ORDER BY id DESC'
-        ;   
-        
-        
+        ;
+
+
         $stmt = $this->pdo->query($sql);
         $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -61,7 +61,7 @@ class UsuariosController
     {
         header('Content-Type: application/json; charset=utf-8');
 
-        $nome  = trim($_POST['nome'] ?? '');
+        $nome = trim($_POST['nome'] ?? '');
         $email = trim($_POST['email'] ?? '');
         $senha = $_POST['senha'] ?? '';
         $perfil = $_POST['perfil'] ?? 'atendente';
